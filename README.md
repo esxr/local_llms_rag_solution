@@ -1,10 +1,14 @@
 ## Introduction
 
-Previously we locally hosted LLMs using [Ollama](https://ollama.ai), and interacted with them in a ChatGPT like interface using [Ollama Web UI](https://github.com/ollama-webui/ollama-webui) also hosted locally. This video continues that journey. Here, I build a solution using a locally hosted LLM and [LangChain](https://langchain.com) (the most popular framework for building LLM solutions).
+In one of my [YouTube videos](https://youtu.be/4Rl2r9JV-6Q), I locally hosted LLMs using [Ollama](https://ollama.ai), and interacted with them in a ChatGPT like interface using [Ollama Web UI](https://github.com/ollama-webui/ollama-webui) also hosted locally. This continues that journey. Here, I build a solution using a locally hosted LLM and [LangChain](https://langchain.com) (the most popular framework for building LLM solutions).
+
+The Youtube video for the same is available [here](https://youtu.be/7S73a_XuTdg)
 
 ## Motivation
 
-I love the built-in SpotLight on Mac. It indexes my documents and allows me to search for keywords and find relevant documents. In a lot of cases, I am not looking for a document, I am looking for answers to my questions that I know are somewhere there in my documents. LLMs are good at answering questions. But they don't have my documents. So I want to build a solution that retrieves relevant documents using Spotlight, and then passes them to LLM to generate answers to my questions. Such technique where we first retrieve information from a database or corpus, and then pass it on to an LLM to generate a response is also referred to as a **Retrieval Augmented Generation** solution. Since we'll do everything local, let's call this **Local RAG**.
+I love the built-in SpotLight on Mac. It indexes my documents and allows me to search for keywords and find relevant documents. In a lot of cases, I am not looking for a document, I am looking for answers to my questions that I know are somewhere there in my documents. 
+
+LLMs are good at answering questions. But they don't have my documents. So I want to build a solution that retrieves relevant documents using Spotlight, and then passes them to LLM to generate answers to my questions. Such technique where we first retrieve information from a database or corpus, and then pass it on to an LLM to generate a response is also referred to as a **Retrieval Augmented Generation** solution. Since we'll do everything local, let's call this **Local RAG**.
 
 ## Setup
 Let's begin by creating a python environment. Let me use conda for this.
