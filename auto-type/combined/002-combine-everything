@@ -1,0 +1,17 @@
+file: src/spotlight.py
+line: 1
+align: top
+---
+↓↓⇥
+from keywords import extract_keywords
+from qa import generate_answer
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓⇥
+    # Let's extact keywords from the query
+    keywords = extract_keywords(args.query)
+
+    # Construct an OR query from the keywords
+    query = " OR ".join(keywords)
+↓↓⇥←←←←←←←←←←←←←←←←←←←←←←←←←←⌫⌫⌫⌫⌫⇥
+    
+    # Generate answer for the original query and top 3 search results
+    print(generate_answer(args.query, search_results[:3], doc_type="Candidate"))

@@ -1,0 +1,19 @@
+file: src/qa.py
+line: 1
+align: top
+---
+from langchain.document_loaders import PyPDFLoader
+from langchain.schema import Document
+
+
+def get_docs(file_paths: list[str]) -> list[Document]:
+    docs = []
+    for file_path in file_paths:
+        loader = PyPDFLoader(file_path)
+        pages = loader.load()  # PyPDFLoader returns a doc for each Page
+        docs.append(Document(  # Let's merge all pages into a single text document
+            page_content="\n".join(page.page_content for page in pages),
+            metadata={"source": file_path}
+        ))
+    return docs
+

@@ -1,0 +1,18 @@
+file: src/spotlight.py
+line: 1
+align: top
+---
+import argparse  # To parse command line arguments
+
+
+def main():
+    # Setup argument parser
+    parser = argparse.ArgumentParser(description='Search files using Spotlight.')
+    parser.add_argument('query', type=str, help='Search query')
+
+    # Parse commandline arguments
+    args = parser.parse_args()
+
+
+if __name__ == "__main__":  # Entry point of the program
+    main()

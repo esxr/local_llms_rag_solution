@@ -1,0 +1,8 @@
+file: src/spotlight.py
+line: 1
+align: top
+---
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓⇥
+    parser.add_argument('--folder', type=str, help='Folder to search in', default=None)↓↓↓↓↓↓↓⇥←, folder=args.folder↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑⇥←←, folder=None↓↓
+    if folder is not None:
+        command += ["-onlyin", folder]

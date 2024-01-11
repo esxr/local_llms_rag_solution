@@ -1,0 +1,29 @@
+file: src/spotlight.py
+line: 1
+align: top
+---
+⇥
+import subprocess  # To run spotlight as a subprocess
+
+
+def search_with_spotlight(query):
+    # Prepare the command
+    command = ["mdfind"]
+    command += [query]
+
+    # Execute mdfind command and capture output
+    result = subprocess.run(command, capture_output=True, text=True)
+
+    # Check if the command was successful
+    if result.returncode != 0:
+        print("Error in executing search")
+        return []
+
+    # Split the output into lines to get individual file paths
+    file_paths = result.stdout.strip().split('\n')
+    return file_paths↓↓↓↓↓↓↓↓↓↓
+    # Perform spotlight search
+    search_results = search_with_spotlight(args.query)
+
+    # Print search results
+    print(search_results)

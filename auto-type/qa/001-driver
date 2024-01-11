@@ -1,0 +1,26 @@
+file: src/qa.py
+line: 1
+align: top
+---
+
+def generate_answer(question: str, file_paths: list[str], **kwargs: dict) -> str:
+    # Get Document objects with text content from file paths
+    docs = get_docs(file_paths)
+
+    # Construct QA chain
+    qa_chain = build_qa_chain()
+
+    # Prepare input
+    input = {"docs":docs, "question":question}
+    input.update(kwargs)
+
+    # Invoke the chain
+    return qa_chain.invoke(input)
+
+
+if __name__ == "__main__":  # Entry point of the program
+    print(generate_answer(
+        question="Give me a short, 100 words summary of each candidate having a coursera certification in Generative AI. Please include their contact details as well.",
+        file_paths=["~/Documents/Resumes/Pranav Dhoolia.pdf"],
+        doc_type="Candidate Resume"
+    ))

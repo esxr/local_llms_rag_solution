@@ -1,0 +1,15 @@
+file: src/qa.py
+line: 1
+align: top
+---
+↓↓↓⇥
+from langchain_core.prompts import format_document↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓⇥
+            "context": lambda input: build_context(input["docs"], input.get("doc_type", "Document")),
+            "question": lambda input: input["question"]↑↑↑↑⇥
+
+    def build_context(docs: list[Document], doc_type: str="Document") -> str:
+        doc_prompt = PromptTemplate.from_template("{page_content}")
+        context = ""
+        for i, doc in enumerate(docs):
+            context += f"{doc_type} {i + 1}\n---\n{format_document(doc, doc_prompt)}\n\n"
+        return context
